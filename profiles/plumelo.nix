@@ -7,6 +7,7 @@
     # config
     ../modules/virtualisation/lxc.nix
     ../modules/virtualisation/lxd.nix
+    ../modules/virtualisation/docker.nix
     ../modules/hardware/ssd.nix
     ../modules/hardware/zram.nix
   ];

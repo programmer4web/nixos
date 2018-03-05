@@ -9,7 +9,7 @@
     users.__user__ = {
       isNormalUser = true;
       uid = 1000;
-      extraGroups = ["__user__" "wheel" "disk" "audio" "video" "networkmanager" "systemd-journal" "lxd"];
+      extraGroups = ["__user__" "wheel" "disk" "audio" "video" "networkmanager" "systemd-journal" "lxd" "docker"];
       initialPassword = "__user__";
     };
   };
