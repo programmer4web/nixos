@@ -17,7 +17,7 @@ in {
         sha256 = "1kxhwpfv9324828bngviacyl05jlrkqryppr1h257nhypy9rpxyg"; 
       }; 
       hardeningDisable = ["pic"]; 
-     nativeBuildInputs = self.linux_4_16_rc.kernel.moduleBuildDependencies; 
+     nativeBuildInputs = kernel.moduleBuildDependencies; 
  
       preBuild = '' 
           substituteInPlace Makefile --replace "\$(shell uname -r)" "${kernel.modDirVersion}"
