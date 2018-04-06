@@ -11,5 +11,4 @@ in {
     ./plumelo.nix
     ../modules/services/X11/gnome3.nix 
   ];
-  nix.package = pkgs.nixStable2;
 }
