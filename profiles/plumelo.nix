@@ -12,6 +12,7 @@
     ../modules/hardware/zram.nix
   ];
 
+  nix.buildCores = 0;
   nixpkgs.config.allowUnfree = true;
 
   i18n = {
