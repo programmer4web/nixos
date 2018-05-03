@@ -1,13 +1,8 @@
 { config, lib, pkgs, ... }:
-
-let
-  unstable = import <nixos-unstable> {
-    config.allowUnfree = true;
-  };
-in {
+{
   nixpkgs.overlays = [( self: super: {
-    lm_sensors = unstable.lm_sensors.overrideAttrs(old: rec {
-      src = super.fetchFromGitHub {
+    lm_sensors = with super; lm_sensors.overrideAttrs(old: rec {
+      src = fetchFromGitHub {
         owner = "groeck";
         repo = "lm-sensors";
         rev = "6d970e5eb196061605c138c9dcbc833b052c4f3a";

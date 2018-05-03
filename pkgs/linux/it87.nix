@@ -13,8 +13,8 @@ in {
       src = unstable.fetchFromGitHub { 
         owner = "groeck"; 
         repo = "it87"; 
-        rev = "master"; 
-        sha256 = "1kxhwpfv9324828bngviacyl05jlrkqryppr1h257nhypy9rpxyg"; 
+        rev = "3436b280785dbb05a73c5468d09d1e49e8ce09c9"; 
+        sha256 = "1abp7jpacklhhmn1c265yyzgp8dph6cdjpgbwhvx8lf1xh6vzqdz"; 
       }; 
       hardeningDisable = ["pic"]; 
      nativeBuildInputs = kernel.moduleBuildDependencies; 
