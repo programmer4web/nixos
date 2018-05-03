@@ -13,7 +13,6 @@
       MEDIA_TUNER n
       IRDA n
       LUSTRE_FS n
-      FIREWIRE n
       INPUT_TABLET n
       CHROME_PLATFORMS n
     '';
