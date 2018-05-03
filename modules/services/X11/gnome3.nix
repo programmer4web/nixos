@@ -1,12 +1,20 @@
 { config, lib, pkgs, ... }:
 {
+
   environment.systemPackages = with pkgs; [
-    # themes
-    paper-gtk-theme
-    paper-icon-theme
-    gnome3.gnome-disk-utility
     arc-theme
     arc-icon-theme
+
+    paper-icon-theme
+
+    numix-cursor-theme
+    numix-gtk-theme
+    numix-icon-theme
+    numix-icon-theme-circle
+    numix-icon-theme-square	
+    numix-sx-gtk-theme
+
+    adapta-gtk-theme
 
     # disk utilities
     parted
@@ -32,6 +40,7 @@
     gnome-user-share.enable = false;
     gnome-online-miners.enable = false;
     gnome-keyring.enable = true;
+    gnome-disks.enable = true;
   };
 }
 
