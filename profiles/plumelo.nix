@@ -49,7 +49,7 @@
     kernelModules = [
       "coretemp"
     ];
-    kernelPackages = pkgs.linuxPackages_4_15;
+    kernelPackages = pkgs.linuxPackages_latest;
     blacklistedKernelModules = ["ideapad-laptop"];
   };
 
