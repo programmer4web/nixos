@@ -19,4 +19,7 @@
       '';
     };
   })];
+  environment.systemPackages = with pkgs; [ 
+    yoga_fan 
+  ]; 
 }
