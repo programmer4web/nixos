@@ -1,16 +1,13 @@
 { config, lib, pkgs, ... }: 
  
 let 
-  unstable = import <nixos-unstable> { 
-    config.allowUnfree = true; 
-  };
   kernel = config.boot.kernelPackages.kernel; 
 in { 
   nixpkgs.overlays = [( self: super: { 
-    it87  = unstable.stdenv.mkDerivation  rec { 
+    it87  = with super; stdenv.mkDerivation  rec { 
       name = "it87-${version}"; 
       version = "1.0"; 
-      src = unstable.fetchFromGitHub { 
+      src = fetchFromGitHub { 
         owner = "groeck"; 
         repo = "it87"; 
         rev = "3436b280785dbb05a73c5468d09d1e49e8ce09c9"; 
