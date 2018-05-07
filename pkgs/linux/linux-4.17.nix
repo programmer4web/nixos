@@ -9,11 +9,11 @@ in {
         kernelPatches.modinst_arg_list_too_long 
       ];
       argsOverride = with super; rec {
-        version = "4.17-rc3";
-        modDirVersion = "4.17.0-rc3";
+        version = "4.17-rc4";
+        modDirVersion = "4.17.0-rc4";
         src = fetchurl {
           url = "https://git.kernel.org/torvalds/t/linux-${version}.tar.gz";
-          sha256 = "1divgjzmpl98b5j416vhkq53li0y9v5vvdwbgwpr2xznspzbkygq";
+          sha256 = "1y34hpzgxblwqslhsfsmzmpv9f3s936r93wgn4kmhkcwsm0in292";
         };
       };
     };
