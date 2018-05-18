@@ -1,5 +1,36 @@
 { config, lib, pkgs, ... }:
 {
+
+  nixpkgs.overlays = [( self: super: { 
+    lxc-templates = with super; stdenv.mkDerivation rec {
+      name = "lxc-templates-${version}";
+      version = "3.0.0";
+      src = fetchFromGitHub {
+        owner = "lxc";
+        repo = "lxc-templates";
+        rev = "07632524aec75e27d245555f5ddcfc40a0aebca5";
+       sha256 = "0cb92wdjzzdm73zdlx0h9z8kj3w0kwsrmbg40c002rqibw03afja";
+      };
+      preConfigure = ''
+        for file in $(find ./config -type f -name  "*.conf.in"); do
+          substituteInPlace $file \
+            --replace "@LXCTEMPLATECONFIG@/common.conf" ${lxc}/share/lxc/config/common.conf
+        done
+      '';
+      postInstall = ''
+        rm -rf $out/var
+      '';
+      nativeBuildInputs = [
+        autoreconfHook pkgconfig
+      ];
+      buildInputs = [lxc];
+    };
+  })];
+
+  environment.systemPackages = with pkgs; [
+    lxc-templates
+  ]; 
+
   services.dnsmasq = {
     enable = true;
     extraConfig =
