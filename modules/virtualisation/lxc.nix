@@ -30,7 +30,17 @@
 
   environment.systemPackages = with pkgs; [
     lxc-templates
-  ]; 
+  ];
+
+  system.activationScripts = {
+    lxc = {
+      text = ''
+        mkdir -p /usr/share
+        ln -sfn /run/current-system/sw/share/lxc  /usr/share/lxc
+      '';
+      deps = [];
+    }; 
+  };
 
   services.dnsmasq = {
     enable = true;
