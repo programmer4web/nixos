@@ -14,7 +14,8 @@
       preConfigure = ''
         for file in $(find ./config -type f -name  "*.conf.in"); do
           substituteInPlace $file \
-            --replace "@LXCTEMPLATECONFIG@/common.conf" ${lxc}/share/lxc/config/common.conf
+            --replace "@LXCTEMPLATECONFIG@/common.conf" ${lxc}/share/lxc/config/common.conf \
+            --replace "@LXCTEMPLATECONFIG@/userns.conf" ${lxc}/share/lxc/config/userns.conf
         done
       '';
       postInstall = ''
